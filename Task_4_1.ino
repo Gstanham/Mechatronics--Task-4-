@@ -19,7 +19,7 @@ int gateClosed = 0;
 int gateOpen = 90;  
 
 
-long getDistance()
+long getDistance // Distance in Cm's
 {
   digitalWrite(trigPin, LOW); 
   delayMicroseconds(2);
@@ -33,7 +33,7 @@ long getDistance()
 
   return distance;
 
-  // Converts time - distnace 
+  // Converts time - distance 
 }
 
 void lcdMessage(String line1, String line2)
@@ -79,8 +79,6 @@ void loop()
   Serial.print(threshold);
   Serial.println(" cm");
 
-
-  
   if(distance < threshold)
   {
     lcdMessage("Car Detected","Press Button"); // LCD message 
